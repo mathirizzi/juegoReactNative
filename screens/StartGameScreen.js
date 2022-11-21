@@ -40,7 +40,7 @@ export default function StartGameScreen({ onStartGame }) {
             <Pressable 
             style={styles.cleanButton}
             onPress={handleResetInput}>
-                <Text>Limpiar</Text>
+                <Text style={{color: "white", fontWeight: "bold"}}>Limpiar</Text>
             </Pressable>
             <Pressable
             style={{
@@ -48,15 +48,15 @@ export default function StartGameScreen({ onStartGame }) {
                 ...styles.confirmButton,
             }}
             onPress={handleConfirmation}>
-                <Text>Confirmar</Text>
+                <Text style={{color: "white", fontWeight: "bold"}}>Confirmar</Text>
             </Pressable>
         </View>
       </Card>
 
       {confirmed && (
-        <Card newStyles={{ marginTop: 50, width: 150 }}>
-            <Text>Tu numero</Text>
-            <Text>{selectedNumber}</Text>
+        <Card newStyles={{ marginTop: 50, width: 300, }}>
+            <Text>Elejiste el numero:</Text>
+            <Text style={{fontWeight: "bold", color: "red", fontSize: 30}}>{selectedNumber}</Text>
             <Button title="Empezar Juego" onPress={() => onStartGame(selectedNumber)} />
         </Card>
       )}

@@ -2,10 +2,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import colors from "../constants/colors";
 import React from 'react'
 
-export default function Header({title}) {
+export default function Header({title, newStyles}) {
   return (
     <View style={styles.header}>
-      <Text style={styles.headerTitle}>{title}</Text>
+      <Text style={{ ...styles.headerTitle, ...newStyles}}>{title}</Text>
     </View>
   )
 }
@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     color: colors.secondary,
-    fontSize: 30,
+    fontSize: 40,
   }
 })
